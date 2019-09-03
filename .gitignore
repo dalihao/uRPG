@@ -20,3 +20,5 @@
 .DS_Store?
 ehthumbs.db
 Thumbs.db
+/Server/kbengine_demos_assets-2.5.1/kbengine_unity3d_plugins
+/Server/kbengine_demos_assets-2.5.1/kbengine_ue4_plugins
