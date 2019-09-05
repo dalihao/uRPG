@@ -41,7 +41,7 @@ def onRequestLogin(loginName, password, clientType, datas):
 	此处还可以对登陆进行排队，将排队信息存放于datas
 	"""
 	INFO_MSG('onRequestLogin() loginName=%s, clientType=%s' % (loginName, clientType))
-
+	
 	errorno = KBEngine.SERVER_SUCCESS
 	
 	if len(loginName) > 64:
