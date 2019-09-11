@@ -1,30 +1,32 @@
-# ---------------[ UE4 generated ]------------------ #
-/Binaries
-/DerivedDataCache
-/Intermediate
-/Saved
-/Plugins/kbengine_ue4_plugins/Binaries
-/Plugins/kbengine_ue4_plugins/Intermediate
+# # ---------------[ UE4 generated ]------------------ #
+# /Binaries
+# /DerivedDataCache
+# /Intermediate
+# /Saved
+# /Plugins/kbengine_ue4_plugins/Binaries
+# /Plugins/kbengine_ue4_plugins/Intermediate
 
-# ----[ Visual Studio ]------- #
-/.vs
-*.svd
-*.pidb
-*.suo
-*.sln
- *.opendb
- *.sdf
+# # ----[ Visual Studio ]------- #
+# /.vs
+# *.svd
+# *.pidb
+# *.suo
+# # *.sln
+#  *.opendb
+#  *.sdf
 
-# -------------[ OS generated ]------------------------ #
-.DS_Store
-.DS_Store?
-ehthumbs.db
-Thumbs.db
-/Server/kbengine_demos_assets-2.5.1/kbengine_unity3d_plugins
-/Server/kbengine_demos_assets-2.5.1/kbengine_ue4_plugins
-/Server/getstarted_assets/kbengine_ue4_plugins
-/Server/getstarted_assets/kbengine_unity3d_plugins
-/Server/kbe/src/.vs
+# # -------------[ OS generated ]------------------------ #
+# .DS_Store
+# .DS_Store?
+# ehthumbs.db
+# Thumbs.db
+# /Server/kbengine_demos_assets-2.5.1/kbengine_unity3d_plugins
+# /Server/kbengine_demos_assets-2.5.1/kbengine_ue4_plugins
+# /Server/getstarted_assets/kbengine_ue4_plugins
+# /Server/getstarted_assets/kbengine_unity3d_plugins
+# /Server/kbe/src/.vs
+# /Server/server_assets/kbengine_ue4_plugins
+# /Server/server_assets/kbengine_unity3d_plugins
+*.pyc
 /Server/server_assets/kbengine_ue4_plugins
 /Server/server_assets/kbengine_unity3d_plugins
-*.pyc

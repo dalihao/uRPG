@@ -8,7 +8,6 @@
 #include "Entity.h"
 
 #include "Scripts/Account.h"
-#include "Scripts/FirstEntity.h"
 
 namespace KBEngine
 {
@@ -96,9 +95,6 @@ Entity* EntityDef::createEntity(int utype)
 		case 1:
 			pEntity = new Account();
 			break;
-		case 2:
-			pEntity = new FirstEntity();
-			break;
 		default:
 			SCREEN_ERROR_MSG("EntityDef::createEntity() : entity(%d) not found!", utype);
 			break;
@@ -156,97 +152,6 @@ void EntityDef::initScriptModules()
 	//DEBUG_MSG("EntityDef::initScriptModules: add(Account), property(spaceID / 40002).");
 
 	pAccountModule->useMethodDescrAlias = true;
-	ScriptModule* pFirstEntityModule = new ScriptModule("FirstEntity", 2);
-	EntityDef::moduledefs.Add(TEXT("FirstEntity"), pFirstEntityModule);
-	EntityDef::idmoduledefs.Add(2, pFirstEntityModule);
-
-	Property* pFirstEntity_position = new Property();
-	pFirstEntity_position->name = TEXT("position");
-	pFirstEntity_position->properUtype = 40000;
-	pFirstEntity_position->properFlags = 4;
-	pFirstEntity_position->aliasID = 1;
-	KBVar* pFirstEntity_position_defval = new KBVar(FVector());
-	pFirstEntity_position->pDefaultVal = pFirstEntity_position_defval;
-	pFirstEntityModule->propertys.Add(TEXT("position"), pFirstEntity_position); 
-
-	pFirstEntityModule->usePropertyDescrAlias = true;
-	pFirstEntityModule->idpropertys.Add((uint16)pFirstEntity_position->aliasID, pFirstEntity_position);
-
-	//DEBUG_MSG("EntityDef::initScriptModules: add(FirstEntity), property(position / 40000).");
-
-	Property* pFirstEntity_direction = new Property();
-	pFirstEntity_direction->name = TEXT("direction");
-	pFirstEntity_direction->properUtype = 40001;
-	pFirstEntity_direction->properFlags = 4;
-	pFirstEntity_direction->aliasID = 2;
-	KBVar* pFirstEntity_direction_defval = new KBVar(FVector());
-	pFirstEntity_direction->pDefaultVal = pFirstEntity_direction_defval;
-	pFirstEntityModule->propertys.Add(TEXT("direction"), pFirstEntity_direction); 
-
-	pFirstEntityModule->usePropertyDescrAlias = true;
-	pFirstEntityModule->idpropertys.Add((uint16)pFirstEntity_direction->aliasID, pFirstEntity_direction);
-
-	//DEBUG_MSG("EntityDef::initScriptModules: add(FirstEntity), property(direction / 40001).");
-
-	Property* pFirstEntity_spaceID = new Property();
-	pFirstEntity_spaceID->name = TEXT("spaceID");
-	pFirstEntity_spaceID->properUtype = 40002;
-	pFirstEntity_spaceID->properFlags = 16;
-	pFirstEntity_spaceID->aliasID = 3;
-	KBVar* pFirstEntity_spaceID_defval = new KBVar((uint32)FCString::Atoi64(TEXT("")));
-	pFirstEntity_spaceID->pDefaultVal = pFirstEntity_spaceID_defval;
-	pFirstEntityModule->propertys.Add(TEXT("spaceID"), pFirstEntity_spaceID); 
-
-	pFirstEntityModule->usePropertyDescrAlias = true;
-	pFirstEntityModule->idpropertys.Add((uint16)pFirstEntity_spaceID->aliasID, pFirstEntity_spaceID);
-
-	//DEBUG_MSG("EntityDef::initScriptModules: add(FirstEntity), property(spaceID / 40002).");
-
-	TArray<DATATYPE_BASE*> FirstEntity_onEnter_args;
-
-	Method* pFirstEntity_onEnter = new Method();
-	pFirstEntity_onEnter->name = TEXT("onEnter");
-	pFirstEntity_onEnter->methodUtype = 2;
-	pFirstEntity_onEnter->aliasID = 1;
-	pFirstEntity_onEnter->args = FirstEntity_onEnter_args;
-
-	pFirstEntityModule->methods.Add(TEXT("onEnter"), pFirstEntity_onEnter); 
-	pFirstEntityModule->useMethodDescrAlias = true;
-	pFirstEntityModule->idmethods.Add((uint16)pFirstEntity_onEnter->aliasID, pFirstEntity_onEnter);
-
-	//DEBUG_MSG("EntityDef::initScriptModules: add(FirstEntity), method(onEnter / 2).");
-
-	TArray<DATATYPE_BASE*> FirstEntity_onSay_args;
-	FirstEntity_onSay_args.Add(EntityDef::id2datatypes[12]);
-
-	Method* pFirstEntity_onSay = new Method();
-	pFirstEntity_onSay->name = TEXT("onSay");
-	pFirstEntity_onSay->methodUtype = 3;
-	pFirstEntity_onSay->aliasID = 2;
-	pFirstEntity_onSay->args = FirstEntity_onSay_args;
-
-	pFirstEntityModule->methods.Add(TEXT("onSay"), pFirstEntity_onSay); 
-	pFirstEntityModule->useMethodDescrAlias = true;
-	pFirstEntityModule->idmethods.Add((uint16)pFirstEntity_onSay->aliasID, pFirstEntity_onSay);
-
-	//DEBUG_MSG("EntityDef::initScriptModules: add(FirstEntity), method(onSay / 3).");
-
-	TArray<DATATYPE_BASE*> FirstEntity_say_args;
-	FirstEntity_say_args.Add(EntityDef::id2datatypes[12]);
-
-	Method* pFirstEntity_say = new Method();
-	pFirstEntity_say->name = TEXT("say");
-	pFirstEntity_say->methodUtype = 1;
-	pFirstEntity_say->aliasID = -1;
-	pFirstEntity_say->args = FirstEntity_say_args;
-
-	pFirstEntityModule->methods.Add(TEXT("say"), pFirstEntity_say); 
-	pFirstEntityModule->cell_methods.Add(TEXT("say"), pFirstEntity_say);
-
-	pFirstEntityModule->idcell_methods.Add(pFirstEntity_say->methodUtype, pFirstEntity_say);
-
-	//DEBUG_MSG("EntityDef::initScriptModules: add(FirstEntity), method(say / 1).");
-
 }
 
 void EntityDef::initDefTypes()
