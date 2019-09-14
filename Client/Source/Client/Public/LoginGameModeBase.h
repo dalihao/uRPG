@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "RPGGameModeBase.h"
-#include "RPGLoginGameModeBase.generated.h"
+#include "LoginGameModeBase.generated.h"
 
 /**
  * 
@@ -14,4 +14,9 @@ class CLIENT_API ARPGLoginGameModeBase : public ARPGGameModeBase
 {
 	GENERATED_BODY()
 	
+public:
+
+	//virtual void installEvents() override;
+
+
 };
